@@ -1,0 +1,144 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Smart To-Do Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="brand-icon">✓</span>
+                <span>TaskFlow</span>
+            </div>
+
+            <p class="nav-label">WORKSPACE</p>
+
+            <nav>
+                <a href="#" class="nav-item active">▦ <span>My Tasks</span></a>
+                <a href="#task-form" class="nav-item">＋ <span>Add a Task</span></a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="avatar">TF</div>
+                <div>
+                    <strong>My Workspace</strong>
+                    <small>Personal planner</small>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+                    <h1>My Tasks <span class="wave">✦</span></h1>
+                    <p class="subtitle">Small steps every day lead to big results.</p>
+                </div>
+                <div class="date-pill" id="today-date">Your daily plan</div>
+            </header>
+
+            <section class="welcome-card">
+                <div>
+                    <p class="welcome-tag">YOUR DAY, YOUR PACE</p>
+                    <h2>Make today count.</h2>
+                    <p>Plan your priorities and celebrate every little win.</p>
+                </div>
+                <div class="welcome-art">✦</div>
+            </section>
+
+            <section class="stats">
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>Total tasks</span>
+                        <span class="stat-icon purple">▤</span>
+                    </div>
+                    <strong id="total-count">0</strong>
+                    <small>Tasks in your list</small>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>Completed</span>
+                        <span class="stat-icon green">✓</span>
+                    </div>
+                    <strong id="completed-count">0</strong>
+                    <small>Little wins achieved</small>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>Pending</span>
+                        <span class="stat-icon orange">◷</span>
+                    </div>
+                    <strong id="pending-count">0</strong>
+                    <small>Still on your list</small>
+                </article>
+            </section>
+
+            <section class="task-panel">
+                <div class="section-heading">
+                    <div>
+                        <h2>Task board</h2>
+                        <p>Everything you need to get done.</p>
+                    </div>
+                </div>
+
+                <form id="task-form">
+                    <input id="task-title" type="text"
+                        placeholder="What do you need to do?"
+                        maxlength="120" required>
+
+                    <select id="task-category">
+                        <option value="Personal">Personal</option>
+                        <option value="Study">Study</option>
+                        <option value="Work">Work</option>
+                        <option value="Health">Health</option>
+                    </select>
+
+                    <select id="task-priority">
+                        <option value="Medium">Medium priority</option>
+                        <option value="High">High priority</option>
+                        <option value="Low">Low priority</option>
+                    </select>
+
+                    <button type="submit">+ Add task</button>
+                </form>
+
+                <div class="filters">
+                    <button class="filter active" data-filter="All">All tasks</button>
+                    <button class="filter" data-filter="Pending">Pending</button>
+                    <button class="filter" data-filter="Completed">Completed</button>
+                </div>
+
+                <div id="task-list" class="task-list">
+                    <div class="empty-state">
+                        <div class="empty-icon">✦</div>
+                        <h3>Your fresh start begins here</h3>
+                        <p>Add your first task above and make today productive.</p>
+                    </div>
+                </div>
+
+                <div class="progress-area">
+                    <div class="progress-label">
+                        <span>Daily progress</span>
+                        <strong id="progress-text">0%</strong>
+                    </div>
+                    <div class="progress-track">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                </div>
+            </section>
+
+            <footer>Made for your goals, one task at a time. ✦</footer>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
